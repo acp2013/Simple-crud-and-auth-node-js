@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    script(src="/js/jquery.min.js")
+    link(rel='stylesheet', href='/css/bootstrap.min.css') 
+    link(rel='stylesheet', href='/css/style.css')    
+
+body
+nav.navbar.navbar-inverse.navbar-fixed-top
+ div.container-fluid
+  div.navbar-header      
+   a(class="navbar-brand",href="#")
+    img(src='/images/logo.png',class='logo' )   
+   a(class="navbar-brand",href="#") Book Store
+  ul.nav.navbar-nav.navbar-right
+   if login  
+    li
+     a(href='/signout') Sign Out	
+   else 
+    li
+     a(href="/signup") Sign Up
+    li 
+     a(href="/") Log in	
+block content

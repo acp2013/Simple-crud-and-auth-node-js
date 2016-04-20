@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.col-sm-3				
+				div.signup-wall
+					h1.text-center.login-title Welcome #{user.firstName}. Check your details below:
+					img(src='/images/canvas.png',class='img-circle ava')
+					ul.user-details
+						li #{user.username}
+						li #{user.email}
+			div.col-sm-9.show 
+				div.col-sm-3
+					form(method="POST", action="/home", enctype="multipart/form-data")
+						div.form-group
+							label Judul :
+							input(type='text',class='form-control',name="judul")
+						div.form-group
+							label Pengarang :
+							input(type='text',class='form-control',name="pengarang")
+						div.form-group
+							label Tahun :
+							input(type='text',class='form-control',name="tahun")					
+						div.form-group
+							label Gambar:						
+							input(type="file", name="file")												
+						div.form-group
+							button(class="btn btn-primary") Insert

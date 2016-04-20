@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.col-sm-3				
+				div.signup-wall
+					h1.text-center.login-title Welcome #{user.firstName}. Check your details below:
+					img(src='/images/canvas.png',class='img-circle ava')
+					ul.user-details
+						li #{user.username}
+						li #{user.email}
+			div.col-sm-9.show 
+				div.row
+					a(class="btn btn-primary",href="/insert") Insert
+				div.row
+				for val in data
+					div.col-sm-3
+						div.thumbnails
+							img(src='#{val.gambar}')
+							p.booktitle #{val.judul}	
+							p #{val.pengarang}	
+							p #{val.tahun}	
+							a(class="btn",href="/edit/#{val._id}") Edit
+							a(class="btn btn-danger",href="/delete/#{val._id}") Delete
